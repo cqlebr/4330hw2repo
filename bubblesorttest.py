@@ -41,42 +41,49 @@ class TestBubbleSort(unittest.TestCase):
             print(f"Expected: {snd}")
             print(f"Result: {fst}")
 
+    # Testing on a normal array with 6 Elements
     def testSorting(self):
         input = [43, 12, 76, 123, 87, 9]
         result = [9, 12, 43, 76, 87, 123]
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Regular Sorting Array")
     
+    # Testing on an array with duplicate values
     def testDupValues(self):
         input = [12, 53, 34, 12, 54]
         result = [12, 12, 34, 53, 54]
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Duplicate Values Array")
     
+    # Testing on an array with only one value
     def testSingleElem(self):
         input = [1]
         result = [1]
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Single Element Array")
     
+    # Testing on an empty array
     def testEmptyArr(self): 
         input = []
         result = []
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Empty Array")
 
+    # Testing on an already sorted array
     def testAlreadySorted(self):
         input = [1, 2, 3, 4]
         result = [1, 2, 3, 4]
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Already Sorted Array")
     
+    # Testing on an array that is sorted in reverse
     def testReverseSorted(self):
         input = [5, 4, 3, 2, 1]
         result = [1, 2, 3, 4, 5]
         answer = self.bubble_sort.sort(input)
         self.printMsg(answer, result, "Reverse Sorted Array")
     
+    # Testing on the same array twice to make sure it gets the same result twice
     def testIdempotency(self):
         input = [43, 65, 1, 76, 98, 123, 542, 12]
         result = [1, 12, 43, 65, 76, 98, 123, 542]
@@ -86,6 +93,7 @@ class TestBubbleSort(unittest.TestCase):
         secondanswer = self.bubble_sort.sort(answer)
         self.printMsg(secondanswer, result, "Second Idempotency Test")
 
+    # Testing on an array that has a string in it
     def testInvalidElem(self):
         print(f"\nTesting Invalid Elements")
         try:
