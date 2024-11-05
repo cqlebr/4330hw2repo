@@ -16,7 +16,6 @@ class BubbleSort:
         if len(arr) == 0:
             return []
         
-
         n = len(arr)
         for k in range(n):
             swapped = False
@@ -85,7 +84,7 @@ class TestBubbleSort(unittest.TestCase):
         self.printMsg(answer, result, "First Idempotency Test")
 
         secondanswer = self.bubble_sort.sort(answer)
-        self.printMsg(answer, result, "Second Idempotency Test")
+        self.printMsg(secondanswer, result, "Second Idempotency Test")
 
     def testInvalidElem(self):
         print(f"\nTesting Invalid Elements")
